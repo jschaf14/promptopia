@@ -28,7 +28,7 @@ const Feed = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch('/api/prompt?_vercel_no_cache=1');
+      const response = await fetch('/api/prompt', {'cache': 'no-cache'});
       const data = await response.json();
 
       setPosts(data);
