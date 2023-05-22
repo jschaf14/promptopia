@@ -1,6 +1,6 @@
 import Prompt from "@models/prompt";
 import { connectToDB } from "@utils/database";
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export const GET = async (request) => {
   try {
