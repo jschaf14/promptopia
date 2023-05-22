@@ -11,7 +11,7 @@ export const GET = async (request, { params }) => {
     return new Response(JSON.stringify(prompts), {
       status: 200,
       headers: {
-        'Cache-Control': 'no-cache',
+        'cache-control': 's-maxage=1, stale-while-revalidate=59',
       }
     });
   } catch (error) {
