@@ -1,7 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/models";
 
-export const GET = async (request) => {
+export const GET = async (request, { params }) => {
   try {
     await connectToDB();
     const prompts = await Prompt.find( {} )
@@ -11,7 +11,7 @@ export const GET = async (request) => {
     return new Response(JSON.stringify(prompts), {
       status: 200,
       headers: {
-        'cache-control': 'no-cache',
+        'Cache-Control': 'no-cache',
       }
     });
   } catch (error) {
